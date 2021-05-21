@@ -1,87 +1,52 @@
 # Imarcat
 E-marketting website connecting the companies and social media influencvers who want to publicise the products.
-
-Sends automatic mail by SES and Lambda when the S3 bucket is modified. Also recognizes the objects in the image uploaded.     
+ 
 <br>
 
 <p align="center">
-  <img  src="README-IMAGES\res3.PNG" >  
+  <img  src="README_IMAGES\demo-4.png" >  
 </p>
 
-Deployed on Amplify - [Live Demo](https://master.d1i2p3fuorz4wv.amplifyapp.com/)
-
-AWS S3 file Upload URL -
-https://dvp1syfwe3.execute-api.eu-west-1.amazonaws.com/dev/image-upload
-
+---
 
 ### Table of Contents
 
-- [Description](#description)
-- [Process](#analysis)
-- [Results](#results)
+- [Demo](#demo)
 - [Project Layout](#project-layout)
 - [References](#references)
 - [Author Info](#author-info)
 
 ---
 
-## Description
-
-<br>
-
-Using AWS services, I built a serverless portal in which we can upload an image and the image will be store in an S3 bucket and showed on the portal page, Also the admin will get the mail which includes the image attachment along with the 3 things detected in the image with confidence level and also the details of image upload like name of the image, time of upload, Ip address.  
-
-### Services Used
-
-- AWS Lambda
-- AWS S3
-- AWS SES
-- rekognition
-- AWS Amplify
-
-### For Execution
-You need an AWS account. Then clone the repository and create Lambda and S3 buckets with the same names given in the code. Then run npm install and then run the app using npm start to upload the image.
-
----
-
-## Process
-
-The image is uploaded to the S3 bucket through the react website, the trigger will call the lambda function, and using SES we send a mail to admin with image attachment and top 3 objects detected in that image.
-<br>
+## Demo
 
 <p align="center">
-  <img  src="README-IMAGES\Process-1.png" >  
+  <img  src="README_IMAGES\demo-5.png" >  
 </p>
 
----
-
-## Results
-### Example 1
-When you upload the below image
 <p align="center">
-  <img  src="README-IMAGES\photo.jpg" >  
-</p>
-The Received mail is as follows. 
-<p align="center">
-  <img  src="README-IMAGES\res2.PNG" >  
-</p>
-<br>
-
-### Example 2
-When you upload this image
-<p align="center">
-  <img  src="README-IMAGES\pexels-photo-5082572.jpeg" height="200" >  
-</p>
-The Received mail is as follows. 
-<p align="center">
-  <img  src="README-IMAGES\res1.PNG" >  
+  <img  src="README_IMAGES\demo-3.png" >  
 </p>
 
-### Example 3
-When you delete above image from the S3 bucket
+
 <p align="center">
-  <img  src="README-IMAGES\delete_result.PNG" >  
+  <img  src="README_IMAGES\demo-1.png" >  
 </p>
+
+
+<p align="center">
+  <img  src="README_IMAGES\demo-6.png" >  
+</p>
+<p align="center">
+  <img  src="README_IMAGES\demo-7.png" >  
+</p>
+<p align="center">
+  <img  src="README_IMAGES\demo-8.png" >  
+</p>
+
+
+
+
 
 
 #### [Back To The Top](#AWS-Image-Upload-and-Recognize-Objects)
@@ -89,28 +54,87 @@ When you delete above image from the S3 bucket
 ---
 
 ## Project Layout
-
 ```
-AWS-Image-Upload-and-Recognize-Objects
-├─ create_email_recognize.py
-├─ delete_email.py
-├─ lambdas
-│  ├─ common
-│  │  └─ S3.js
-│  └─ endpoints
-│     ├─ imageUpload.js
-│     └─ sendEmail.js
-├─ package-lock.json
-├─ package.json
-├─ README-IMAGES
-│  ├─ pexels-photo-5082572.jpeg
-│  ├─ photo.jpg
-│  ├─ res1.PNG
-│  ├─ res2.PNG
-│  └─ res3.PNG
-├─ README.md
-├─ serverless.yml
-└─ webpack.config.js
+Imarcat
+├─ CSS
+│  ├─ bootstrapwithouttooltip.css
+│  ├─ layout-styles.css
+│  └─ style.css
+├─ google_login
+│  ├─ check.html
+│  ├─ index.php
+│  ├─ mainpage.php
+│  └─ store_to_database.php
+├─ payment
+│  ├─ pay
+│  │  ├─ images
+│  │  │  ├─ payumoney.png
+│  │  │  └─ Thumbs.db
+│  │  ├─ index.php
+│  │  └─ response.php
+│  └─ PHP_Bolt-master.zip
+├─ php files
+│  ├─ change_password.php
+│  ├─ change_profile_image.php
+│  ├─ company_approval.php
+│  ├─ company_login.php
+│  ├─ company_profile.php
+│  ├─ company_registration.php
+│  ├─ credentials.php
+│  ├─ db.php
+│  ├─ dbconnect.php
+│  ├─ edit_profile.php
+│  ├─ errors.php
+│  ├─ forgot_password.php
+│  ├─ google_login.php
+│  ├─ image_upload.php
+│  ├─ imarketing.php
+│  ├─ index.php
+│  ├─ insert-data1.php
+│  ├─ insert-data10.php
+│  ├─ insert-data2.php
+│  ├─ insert_backend.php
+│  ├─ join_marketman.php
+│  ├─ login.php
+│  ├─ login_credentials_generator.php
+│  ├─ marketer_update_rating.php
+│  ├─ marketing.php
+│  ├─ products.php
+│  ├─ product_search.php
+│  ├─ product_search_results.php
+│  ├─ profile.php
+│  ├─ rate_marketers.php
+│  ├─ rating_hired_marketer.php
+│  ├─ register.php
+│  ├─ reg_comp.php
+│  ├─ reject_marketer.php
+│  ├─ search_backend_demo.php
+│  ├─ search_demo.php
+│  ├─ sendsms.php
+│  ├─ server.php
+│  ├─ single_page_form.php
+│  ├─ single_page_upload.php
+│  ├─ store_rating.php
+│  ├─ textlocal.class.php
+│  ├─ upload.php
+│  └─ upload_profile_picture.php
+├─ README_IMAGES
+│  ├─ demo-1.png
+│  ├─ demo-2.png
+│  ├─ demo-3.png
+│  ├─ demo-4.png
+│  ├─ demo-5.png
+│  ├─ demo-6.png
+│  ├─ demo-7.png
+│  └─ demo-8.png
+└─ Text Local OTP
+   ├─ bg.jpg
+   ├─ credentials.php
+   ├─ error_log
+   ├─ index.php
+   ├─ sendsms.php
+   ├─ send_otp.php
+   └─ textlocal.class.php
 
 ```
 
@@ -118,7 +142,7 @@ AWS-Image-Upload-and-Recognize-Objects
 
 ## References
 
-- [AWS](https://aws.amazon.com/)
+- [PHP](https://www.php.net/)
 
 ---
 
@@ -128,5 +152,6 @@ AWS-Image-Upload-and-Recognize-Objects
 - Github - [Srinivas K](https://github.com/srinivaskool)
 
 #### [Back To The Top](#AWS-Image-Upload-and-Recognize-Objects)
+
 
 
